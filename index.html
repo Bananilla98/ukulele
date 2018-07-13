@@ -7,59 +7,43 @@
     <link type="text/javascript" href="script.js">
   </head>
 
-  <script type="text/javascript">
-  var i = 0; 			// Start Point
-  var images = [];	// Images Array
-  var time = 5000;	// Time Between Switch
+  <div class="w3-content w3-section" style="max-width:500px">
+  <img class="mySlides" src="0.svg">
+  <img class="mySlides" src="1.svg">
+  <img class="mySlides" src="2.svg">
+  <img class="mySlides" src="3.svg">
+  <img class="mySlides" src="4.svg">
+  <img class="mySlides" src="5.svg">
+  <img class="mySlides" src="6.svg">
+  <img class="mySlides" src="7.svg">
+  <img class="mySlides" src="8.svg">
+  <img class="mySlides" src="9.svg">
+  <img class="mySlides" src="10.svg">
+  <img class="mySlides" src="11.svg">
+  <img class="mySlides" src="12.svg">
+  <img class="mySlides" src="13.svg">
+  <img class="mySlides" src="14.svg">
+  <img class="mySlides" src="15.svg">
+  <img class="mySlides" src="16.svg">
+  <img class="mySlides" src="17.svg">
+</div>
 
-  // Image List
-  images[0] = <img src="0.svg">
-  images[2] = <img src="1.svg">
-  images[1] = <img src="2.svg">
-  images[4] = <img src="3.svg">
-  images[3] = <img src="4.svg">
-  images[5] = <img src="5.svg">
-  images[6] = <img src="6.svg">
-  images[7] = <img src="7.svg">
-  images[8] = <img src="8.svg">
-  images[9] = <img src="9.svg">
-  images[10] = <img src="10.svg">
-  images[11] = <img src="10.svg">
-  images[12] = <img src="12.svg">
-  images[13] = <img src="13.svg">
-  images[14] = <img src="14.svg">
-  images[16] = <img src="15.svg">
-  images[15] = <img src="16.svg">
-  images[17] = <img src="17.svg">
+<script>
+var myIndex = 0;
+carousel();
 
-  // Change Image
-  function changeImg(){
-  	document.slide.src = images[i];
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}
+    x[myIndex-1].style.display = "block";
+    setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+</script>
 
-  	// Check If Index Is Under Max
-  	if(i < images.length - 1){
-  	  // Add 1 to Index
-  	  i++;
-  	} else {
-  		// Reset Back To O
-  		i = 0;
-  	}
-
-  	// Run function every x seconds
-  	setTimeout("changeImg()", time);
-  }
-
-  // Run function when page loads
-  window.onload=changeImg;
-
-
-  </script>
-
-
-  </body>
-
-
-
-
-
+</body>
 </html>
